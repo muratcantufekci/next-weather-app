@@ -1,3 +1,7 @@
+import CityForecast from '@/components/CityForecast'
+import CitySearch from '@/components/CitySearch'
+import SevenDayForecast from '@/components/SevenDayForecast'
+import TodayForecast from '@/components/TodayForecast'
 import Head from 'next/head'
 
 export default function Home() {
@@ -13,7 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Weather App</h1>
+        <div className='flex gap-8'>
+          <div className='flex-1'>
+            <CitySearch />
+            <CityForecast />
+            <TodayForecast />
+          </div>
+          <SevenDayForecast />
+        </div>
       </main>
     </>
   )
