@@ -1,3 +1,4 @@
+import AirConditions from '@/components/AirConditions'
 import CityForecast from '@/components/CityForecast'
 import CitySearch from '@/components/CitySearch'
 import SevenDayForecast from '@/components/SevenDayForecast'
@@ -22,6 +23,7 @@ export default function Home() {
             <CitySearch />
             <CityForecast />
             <TodayForecast />
+            <AirConditions />
           </div>
           <SevenDayForecast />
         </div>
