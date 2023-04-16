@@ -1,14 +1,13 @@
 import AirConditions from '@/components/AirConditions'
 import CityForecast from '@/components/CityForecast'
 import CitySearch from '@/components/CitySearch'
-import SevenDayForecast from '@/components/SevenDayForecast'
+import FiveDayForecast from '@/components/FiveDayForecast'
 import TodayForecast from '@/components/TodayForecast'
+import { WeatherProvider } from '@/context/WeatherContext'
 import Head from 'next/head'
 
 export default function Home() {
-  // fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=41.0053&lon=28.9770&appid=95f9a7f17708953d5d2637aef6d30157`)
-  // .then(resp => resp.json())
-  // .then(data => console.log(data))
+ 
   return (
     <>
       <Head>
@@ -18,15 +17,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='flex gap-8'>
-          <div className='flex-1'>
-            <CitySearch />
-            <CityForecast />
-            <TodayForecast />
-            <AirConditions />
+        <WeatherProvider>
+          <div className='flex gap-8'>
+            <div className='flex-1'>
+              <CitySearch />
+              <CityForecast />
+              <TodayForecast />
+              <AirConditions />
+            </div>
+            <FiveDayForecast />
           </div>
-          <SevenDayForecast />
-        </div>
+        </WeatherProvider>
+
       </main>
     </>
   )
