@@ -7,13 +7,17 @@ const WeatherContext = createContext()
 export const WeatherProvider = ({ children }) => {
     const [datas, setDatas] = useState('')
     const [city, setCity] = useState(cities[33])
-    
 
     useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&appid=95f9a7f17708953d5d2637aef6d30157`)
-            .then(response => setDatas(response.data))
+        axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&appid=${process.env.NEXT_PUBLIC_API_KEY}1&units=metric`)
+            .then(response => {
+                setDatas(response.data)
+                localStorage.setItem('data',JSON.stringify(response.data))
+            })
+            .catch(err => {
+                setDatas(JSON.parse(localStorage.getItem('data')))
+            })
     }, [])
-        
     const values = {
         datas,
         setDatas,
