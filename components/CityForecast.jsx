@@ -6,7 +6,6 @@ const CityForecast = () => {
   const { datas, city } = useContext(WeatherContext)
   const [todayForecast, setTodayForecast] = useState('')
   const [imagePath, setImagePath] = useState('')
-  console.log('daa', datas);
   useEffect(() => {
     if (datas) {
       const todaysDate = new Date().toISOString().split('T')[0]

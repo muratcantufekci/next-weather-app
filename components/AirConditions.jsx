@@ -13,7 +13,6 @@ const AirConditions = () => {
       const todaysDate = new Date().toISOString().split('T')[0]
       const todayForecastItem = datas.list.filter(item => item.dt_txt.includes(todaysDate))
       setTodayForecast(todayForecastItem[0])
-      console.log('todayForecastItem', todayForecast);
     }
   }, [datas])
 
