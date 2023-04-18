@@ -97,7 +97,10 @@ body {
 }
 
 main {
-  padding: 80px;
+  padding: 20px;
+  @media screen and (min-width: 768){
+    padding: 80px;
+  }
 }
 
 a {

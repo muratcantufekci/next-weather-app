@@ -7,8 +7,8 @@ const AirConditionItem = ({title, number, icon}) => {
             {icon}
         </div>
         <div>
-            <p className='text-xl font-semibold text-slate-400 mb-3'>{title}</p>
-            <span className='text-3xl text-slate-200 font-semibold'>{number}</span>
+            <p className='text-base font-semibold text-slate-400 mb-3 md:text-xl'>{title}</p>
+            <span className='text-2xl text-slate-200 font-semibold md:text-3xl'>{number}</span>
         </div>
     </div>
   )

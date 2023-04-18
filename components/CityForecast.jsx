@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 import WeatherContext from '@/context/WeatherContext'
+import moment from 'moment/moment'
 
 const CityForecast = () => {
   const { datas, city } = useContext(WeatherContext)
@@ -8,7 +9,7 @@ const CityForecast = () => {
   const [imagePath, setImagePath] = useState('')
   useEffect(() => {
     if (datas) {
-      const todaysDate = new Date().toISOString().split('T')[0]
+      const todaysDate = moment().format('YYYYMMDD')
       const todayForecastItem = datas.list.filter(item => item.dt_txt.includes(todaysDate))
       setTodayForecast(todayForecastItem[0])
     }

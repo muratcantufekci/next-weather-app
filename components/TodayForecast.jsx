@@ -15,6 +15,7 @@ const TodayForecast = () => {
   }, [datas])
 
   const setImagePathHandler = (forecast) => {
+    useEffect(() => {
       if (forecast.weather[0].main === 'Rain') {
         setImagePath('https://assets.api.uizard.io/api/cdn/stream/d12bc406-1c84-42b5-9f37-4d52460d0521.png')
       } else if (forecast.weather[0].main === 'Clouds') {
@@ -22,18 +23,19 @@ const TodayForecast = () => {
       } else {
         setImagePath('https://assets.api.uizard.io/api/cdn/stream/e555eccb-fbe4-4a3c-8917-933a41798140.png')
       }
-      return imagePath
+    }, [])
+    return imagePath
   }
   return (
     <div className='p-6 bg-slate-700 rounded-2xl mb-4'>
-        <h3 className="text-sm font-semibold">TODAY' FORECAST</h3>
-        {todayForecast &&
-          <div className="flex mt-6">
-            {todayForecast.map((item,i) => (
-              <TodaysForecastItem key={i} hour={item.dt_txt.split(' ')[1].slice(0,5)} celcius={Math.round(item.main.temp)} img={() => setImagePathHandler(item)}/>
-            ))}
-          </div>
-        }
+      <h3 className="text-sm font-semibold">TODAY' FORECAST</h3>
+      {todayForecast &&
+        <div className="flex gap-4 mt-6 flex-wrap md:flex-nowrap md:gap-0">
+          {todayForecast.map((item, i) => (
+            <TodaysForecastItem key={i} hour={item.dt_txt.split(' ')[1].slice(0, 5)} celcius={Math.round(item.main.temp)} img={() => setImagePathHandler(item)} />
+          ))}
+        </div>
+      }
     </div>
   )
 }

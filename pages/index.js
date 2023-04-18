@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <main>
         <WeatherProvider>
-          <div className='flex gap-8'>
+          <div className='flex flex-col gap-8 lg:flex-row'>
             <div className='flex-1'>
               <CitySearch />
               <CityForecast />
