@@ -3,6 +3,7 @@ import AirConditionItem from './AirConditionItem'
 import WeatherContext from '@/context/WeatherContext'
 import { FaTemperatureHigh, FaWind, FaTemperatureLow } from 'react-icons/fa'
 import { MdWaterDrop } from "react-icons/md";
+import moment from "moment"
 
 const AirConditions = () => {
   const { datas } = useContext(WeatherContext)
@@ -10,7 +11,7 @@ const AirConditions = () => {
   const [imagePath, setImagePath] = useState('')
   useEffect(() => {
     if (datas) {
-      const todaysDate = new Date().toISOString().split('T')[0]
+      const todaysDate = moment().format('YYYY-MM-DD')
       const todayForecastItem = datas.list.filter(item => item.dt_txt.includes(todaysDate))
       setTodayForecast(todayForecastItem[0])
     }

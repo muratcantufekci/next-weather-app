@@ -9,7 +9,7 @@ export const WeatherProvider = ({ children }) => {
     const [city, setCity] = useState(cities[33])
 
     useEffect(() => {
-        axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric`)
+        axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&appid=${process.env.NEXT_PUBLIC_API_KEY}1&units=metric`)
             .then(response => {
                 setDatas(response.data)
                 localStorage.setItem('data',JSON.stringify(response.data))
