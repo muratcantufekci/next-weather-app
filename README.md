@@ -1,12 +1,12 @@
 ![image](https://user-images.githubusercontent.com/60794840/232919685-d675f43d-d230-4e5b-95c1-824b1b2ae3fe.png)
 ## Used Technologies
-Next.j
-Tailwindcss
+- Next.js
+- Tailwindcss
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
-
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 First, run the development server:
 
 ```bash
