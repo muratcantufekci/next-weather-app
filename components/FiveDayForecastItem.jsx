@@ -5,11 +5,14 @@ const FiveDayForecastItem = ({ day, imgType, celcius }) => {
   const [dayName, setDayName] = useState(day)
   const [imagePath, setImagePath] = useState('')
   const [type, setType] = useState('')
+
+  //Bugün olma durumunu kontrol ediyoruz
   useEffect(() => {
     if (day === new Date().toLocaleString('en-us', { weekday: 'long' })) {
       setDayName('Today')
     }
 
+    //Hava koşuluna göre resimleri ve sıfatını belirliyoruz
     if (imgType === 'Rain') {
       setImagePath('https://assets.api.uizard.io/api/cdn/stream/d12bc406-1c84-42b5-9f37-4d52460d0521.png')
       setType('Rainy')

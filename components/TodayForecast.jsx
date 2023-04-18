@@ -6,13 +6,13 @@ import moment from "moment"
 const TodayForecast = () => {
   const { datas } = useContext(WeatherContext)
   const [todayForecast, setTodayForecast] = useState('')
+
+  //Bugünün tarihini buluyoruz ve gün içerisindeki saat bazlı değişimleri gözlemlemek için ilgili dataları itemlere gönderiyoruz
   useEffect(() => {
     if (datas) {
       const todaysDate = moment().format('YYYY-MM-DD')
-      console.log('todaysDate',todaysDate);
       const todayForecastItem = datas.list.filter(item => item.dt_txt.includes(todaysDate))
       setTodayForecast(todayForecastItem)
-      console.log('toda',todayForecast);
     }
   }, [datas])
 

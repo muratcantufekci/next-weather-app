@@ -7,6 +7,7 @@ const CityForecast = () => {
   const { datas, city } = useContext(WeatherContext)
   const [todayForecast, setTodayForecast] = useState('')
   const [imagePath, setImagePath] = useState('')
+  //Günün hava koşullarını buluyoruz
   useEffect(() => {
     if (datas) {
       const todaysDate = moment().format('YYYY-MM-DD')
@@ -15,6 +16,7 @@ const CityForecast = () => {
     }
   }, [datas])
 
+  //Hava koşullarına göre resimlerimizi değiştiriyoruz
   useEffect(() => {
     if (todayForecast) {
       if (todayForecast.weather[0].main === 'Rain') {

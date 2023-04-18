@@ -8,7 +8,7 @@ import moment from "moment"
 const AirConditions = () => {
   const { datas } = useContext(WeatherContext)
   const [todayForecast, setTodayForecast] = useState('')
-  const [imagePath, setImagePath] = useState('')
+  //Contextten bugünün tarihini bulup o datayı filtreleyerek hava koşullarını gösteriyoruz
   useEffect(() => {
     if (datas) {
       const todaysDate = moment().format('YYYY-MM-DD')

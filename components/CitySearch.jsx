@@ -6,6 +6,7 @@ const CitySearch = () => {
 
     const { setCity } = useContext(WeatherContext)
 
+    //Selectbox her değiştiğinde contextteki şehrimizi güncelleyerek tekrar verilerimizi güncellettiriyoruz
     const selectboxChangeHandler = (e) => {
         setCity(cities[(+e.currentTarget.value) - 1])
     }

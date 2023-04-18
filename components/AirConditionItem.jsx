@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 const AirConditionItem = ({title, number, icon}) => {
+  // Gelen proplarla birlikte ekrana aircontidionitem basar
   return (
     <div className='flex gap-3 w-5/12'>
         <div className='mt-2'>

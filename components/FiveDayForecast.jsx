@@ -6,7 +6,7 @@ const FiveDayForecast = () => {
   const { datas } = useContext(WeatherContext)
   const [fiveDays, setFiveDays] = useState('')
   
-
+  // 5 günlük tava tahminlerini saat 12.00 ı baz alacak şekilde filtreleyerek itemlarıma datalarını gönderiyoruz
   useEffect(() => {
     if (datas) {
       setFiveDays(datas.list.filter(item=> item.dt_txt.split(' ')[1] === '12:00:00'))

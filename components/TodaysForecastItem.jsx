@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 const TodaysForecastItem = ({ hour, celcius, imgType }) => {
   const [imagePath, setImagePath] = useState('')
+
+  //Hava koşuluna göre resimleri belirliyoruz
   useEffect(() => {
     if (imgType === 'Rain') {
       setImagePath('https://assets.api.uizard.io/api/cdn/stream/d12bc406-1c84-42b5-9f37-4d52460d0521.png')
