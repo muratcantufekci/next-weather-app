@@ -14,7 +14,7 @@ const CitySearch = () => {
     return (
         <div>
             <select className="bg-slate-700 p-3 rounded-lg w-full" onChange={selectboxChangeHandler}>
-                <option value="">İstanbul</option>
+                <option value="33">İstanbul</option>
                 {cities.map(item => (
                     <option key={item.id} value={item.id}>{item.name}</option>
                 ))}
